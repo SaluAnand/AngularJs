@@ -13,13 +13,18 @@ myapp.controller('MyCtrl',['$scope',function($scope){
 var myapp = angular.module('MyApp',[]);
 myapp.controller('MyCtrl',['$scope','AppService',
 function($scope,AppService){
+    //------------------------------------
+    /* Filters */
+        $scope.name = "Anand";
+
+    //------------------------------------
     //$scope.students = AppService.getStudents();
     /*AppService.getStudents().then(
         function(result){
             $scope.students = result.data;
         }
     );*/
-    AppService.getStudents().then(
+    /*AppService.getStudents().then(
         function(result){
             $scope.students = result.data.map(
                 function(item){
@@ -28,13 +33,21 @@ function($scope,AppService){
                 }
             );
         }
-    );
+    );*/
+    AppService.getStudents().then(function(result){
+        $scope.students = result;
+    });
+
     $scope.onClick = function(student){
         $scope.SelectedStudent = student;
     }
     $scope.onBtnClick = function(event)
     {
-        console.log(event.target);
+        AppService.getStudents().then(
+            function(result){
+                $scope.students = result.data;
+            }
+        );
     }
 }
 ]);

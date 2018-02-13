@@ -8,6 +8,8 @@
 </head>
 <body>
 <div ng-controller="MyCtrl">
+    {{name | lowercase}}
+    {{}}
     <table>
         <thead>
             <tr>
@@ -20,7 +22,7 @@
         <tbody>
                 <tr ng-repeat="stu in students"> 
                     <td>
-                        {{stu.name}}
+                        {{stu.name | customName}}
                     </td>
                     <td>
                         {{stu.age}}
@@ -30,7 +32,7 @@
                         </td>
                     <td>
                         <button ng-click="onClick(stu)">View Details</button>
-                        <button ng-click="onBtnClick($event)">button 1</button>
+                        <!--<button ng-click="onBtnClick($event)">button 1</button>-->
                     </td>
                 </tr>
         </tbody>
@@ -60,5 +62,6 @@
     <script src="angular.js" ></script>
     <script src="app.js"></script>
     <script src="app.service.js"></script>
+    <script src="app.filter.js"></script>
 </body>
 </html>
