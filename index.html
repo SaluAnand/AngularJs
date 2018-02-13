@@ -7,12 +7,44 @@
     <title>Document</title>
 </head>
 <body>
-    <div ng-controller="MyCtrl">
+<div ng-controller="MyCtrl">
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+                <tr ng-repeat="stu in students"> 
+                    <td>
+                        {{stu.name}}
+                    </td>
+                    <td>
+                        {{stu.age}}
+                    </td>
+                    <td></td>
+                </tr>
+        </tbody>
+    </table>
+</div>
+
+   <!-- <div ng-controller="MyCtrl">
         {{myVal}}
-        {{2+2}}
         <input type="text" ng-model="myVal"/>
         <button ng-click="onClick()">Click Here</button>
-    </div>
+    
+        <div ng-if="myVal.length ===0">
+            Empty
+        </div>
+        <div ng-show="myVal.length ===0">
+            Show
+        </div>
+        <div ng-hide="myVal.length ===0">
+                hide
+        </div>
+    </div>-->
     <script src="angular.js" ></script>
     <script src="app.js"></script>
 </body>
