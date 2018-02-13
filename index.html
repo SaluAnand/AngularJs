@@ -13,6 +13,7 @@
             <tr>
                 <th>Name</th>
                 <th>Age</th>
+                <th>Seniority</th>
                 <th></th>
             </tr>
         </thead>
@@ -24,10 +25,21 @@
                     <td>
                         {{stu.age}}
                     </td>
-                    <td></td>
+                    <td>
+                            {{stu.seniority}}
+                        </td>
+                    <td>
+                        <button ng-click="onClick(stu)">View Details</button>
+                        <button ng-click="onBtnClick($event)">button 1</button>
+                    </td>
                 </tr>
         </tbody>
     </table>
+    <div ng-show="SelectedStudent"> 
+        <h2>Student Details</h2>
+        <p>Name : {{SelectedStudent.name}}</p>
+        <p>Age : {{SelectedStudent.age}}</p>
+    </div>
 </div>
 
    <!-- <div ng-controller="MyCtrl">
@@ -47,5 +59,6 @@
     </div>-->
     <script src="angular.js" ></script>
     <script src="app.js"></script>
+    <script src="app.service.js"></script>
 </body>
 </html>

@@ -11,16 +11,30 @@ myapp.controller('MyCtrl',['$scope',function($scope){
 ]);*/
 
 var myapp = angular.module('MyApp',[]);
-myapp.controller('MyCtrl',['$scope',function($scope){
-    $scope.students = [
-        {
-            name : "ram",
-            age:10
-        },
-        {
-            name : "sam",
-            age : 20
+myapp.controller('MyCtrl',['$scope','AppService',
+function($scope,AppService){
+    //$scope.students = AppService.getStudents();
+    /*AppService.getStudents().then(
+        function(result){
+            $scope.students = result.data;
         }
-    ]
+    );*/
+    AppService.getStudents().then(
+        function(result){
+            $scope.students = result.data.map(
+                function(item){
+                    item.seniority = item.age > 10 ? "senior" : "junior";
+                    return item;
+                }
+            );
+        }
+    );
+    $scope.onClick = function(student){
+        $scope.SelectedStudent = student;
+    }
+    $scope.onBtnClick = function(event)
+    {
+        console.log(event.target);
+    }
 }
 ]);
