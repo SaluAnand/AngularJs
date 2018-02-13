@@ -8,6 +8,12 @@
 </head>
 <body>
 <div ng-controller="MyCtrl">
+    <!--<student-details my-title="first"></student-details>
+    <student-details my-title="second"></student-details>-->
+    <!--<student-details my-list="students" my-title = "{{name}}">-->
+   <student-details selected-Student="SelectedStudent"
+    my-title = "{{SelectedStudent.name}}">
+    </student-details>
     {{name | lowercase}}
     {{}}
     <table>
@@ -37,11 +43,11 @@
                 </tr>
         </tbody>
     </table>
-    <div ng-show="SelectedStudent"> 
+    <!--<div ng-show="SelectedStudent"> 
         <h2>Student Details</h2>
         <p>Name : {{SelectedStudent.name}}</p>
         <p>Age : {{SelectedStudent.age}}</p>
-    </div>
+    </div>-->
 </div>
 
    <!-- <div ng-controller="MyCtrl">
@@ -63,5 +69,6 @@
     <script src="app.js"></script>
     <script src="app.service.js"></script>
     <script src="app.filter.js"></script>
+    <script src="app.components.js"></script>
 </body>
 </html>

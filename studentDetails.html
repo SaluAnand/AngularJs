@@ -1,0 +1,12 @@
+<div>
+    Student Details
+    <!--{{$ctrl.myName}}
+    <h2>{{$ctrl.myTitle}}</h2>
+    {{$ctrl.myList}}
+    <input type='text' />-->
+    <div ng-show="$ctrl.selectedStudent"> 
+            <h2>{{$ctrl.myTitle}}</h2>
+            <p>Name : {{$ctrl.selectedStudent.name}}</p>
+            <p>Age : {{$ctrl.selectedStudent.age}}</p>
+    </div>
+</div>
