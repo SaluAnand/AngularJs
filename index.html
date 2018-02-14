@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="MyApp">
+<html lang="en" ng-app="MyAppNew">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,68 +7,13 @@
     <title>Document</title>
 </head>
 <body>
-<div ng-controller="MyCtrl">
-    <!--<student-details my-title="first"></student-details>
-    <student-details my-title="second"></student-details>-->
-    <!--<student-details my-list="students" my-title = "{{name}}">-->
-   <student-details selected-Student="SelectedStudent"
-    my-title = "{{SelectedStudent.name}}">
-    </student-details>
-    {{name | lowercase}}
-    {{}}
-    <table>
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Age</th>
-                <th>Seniority</th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-                <tr ng-repeat="stu in students"> 
-                    <td>
-                        {{stu.name | customName}}
-                    </td>
-                    <td>
-                        {{stu.age}}
-                    </td>
-                    <td>
-                            {{stu.seniority}}
-                        </td>
-                    <td>
-                        <button ng-click="onClick(stu)">View Details</button>
-                        <!--<button ng-click="onBtnClick($event)">button 1</button>-->
-                    </td>
-                </tr>
-        </tbody>
-    </table>
-    <!--<div ng-show="SelectedStudent"> 
-        <h2>Student Details</h2>
-        <p>Name : {{SelectedStudent.name}}</p>
-        <p>Age : {{SelectedStudent.age}}</p>
-    </div>-->
-</div>
-
-   <!-- <div ng-controller="MyCtrl">
-        {{myVal}}
-        <input type="text" ng-model="myVal"/>
-        <button ng-click="onClick()">Click Here</button>
-    
-        <div ng-if="myVal.length ===0">
-            Empty
-        </div>
-        <div ng-show="myVal.length ===0">
-            Show
-        </div>
-        <div ng-hide="myVal.length ===0">
-                hide
-        </div>
-    </div>-->
+    <ui-view></ui-view>
+    <h2>index.html home</h2>
     <script src="angular.js" ></script>
-    <script src="app.js"></script>
-    <script src="app.service.js"></script>
-    <script src="app.filter.js"></script>
-    <script src="app.components.js"></script>
+    <script src="angular-ui-router.js"></script>
+    <script src="apps.js"></script>
+    <!--<script src="app.service.js"></script>
+    <script src="app.filter.js"></script>-->
+    <script src="apps.components.js"></script>
 </body>
 </html>

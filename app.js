@@ -10,7 +10,7 @@ myapp.controller('MyCtrl',['$scope',function($scope){
 }
 ]);*/
 
-var myapp = angular.module('MyApp',[]);
+var myapp = angular.module('MyApp',['ui-router']);
 myapp.controller('MyCtrl',['$scope','AppService',
 function($scope,AppService){
     //------------------------------------

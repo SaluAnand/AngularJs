@@ -10,3 +10,5 @@ http-server
 
 $q - handling the promises in angular
 $http is internaly using the &q
+
+https://ui-router.github.io/ng1/
